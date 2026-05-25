@@ -1,0 +1,347 @@
+
+/* ================= PRODUCT DETAIL TOP SECTION ================= */
+.product-detail-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- PRODUCT GALLERY (Nửa Trái - 55%) --- */
+.product-gallery {
+    width: 55%;
+    display: flex;
+    gap: 15px;
+    height: 600px;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 75px;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-thumbnails img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border: 1px solid #eeeeee; /* Dùng màu viền mờ đồng nhất */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gallery-thumbnails img.active, 
+.gallery-thumbnails img:hover {
+    border: 1px solid #315c85; /* Viền xanh TLU khi chọn */
+}
+
+.gallery-main {
+    flex: 1;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fcfcfc; /* Đổi nền xám đậm thành nền trắng xám dịu */
+    border: 1px solid #eeeeee;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-expand {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* --- PRODUCT INFO (Nửa Phải - 45%) --- */
+.product-info {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.product-info h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #333; /* Chỉnh màu chữ trùng với màu chữ tiêu đề Blog */
+    line-height: 1.3;
+    margin: 0;
+    flex: 1;
+}
+
+.share-sold {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.share-sold i {
+    color: #385898;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.product-sku {
+    font-size: 13px;
+    color: #999; /* Quy về màu xám của danh mục phụ */
+    margin-bottom: 25px;
+}
+
+.product-sku span {
+    color: #999;
+    margin-right: 5px;
+}
+
+/* Hộp Giá */
+.product-price-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.discount-badge {
+    background-color: #fde8e8;
+    color: #ef5a31; /* Màu cam gắt của Badge sale */
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+}
+
+.current-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ef5a31; /* Màu cam thương hiệu đồng bộ nút mua */
+}
+
+.old-price {
+    font-size: 15px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* Thuộc tính */
+.product-attribute {
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #555; /* Đồng bộ màu chữ nội dung của Blog */
+    line-height: 1.6;
+}
+
+.product-attribute strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.color-swatches {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.color-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid #eeeeee;
+    cursor: pointer;
+    position: relative;
+}
+
+.color-swatch.active {
+    border: 2px solid #333;
+    padding: 2px;
+    background-clip: content-box;
+}
+
+.attr-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+/* Số lượng & Nút bấm */
+.qty-action-wrapper {
+    margin-top: 25px;
+}
+
+.quantity-selector {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fcfcfc; /* Đồng bộ màu nền khối số lượng */
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.quantity-selector button {
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+}
+
+.quantity-selector input {
+    width: 40px;
+    height: 36px;
+    border: none;
+    background: #fff;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.action-btn {
+    height: 45px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.action-btn:hover { opacity: 0.9; }
+.btn-add-cart { background-color: #315c85; }
+.btn-buy-now { background-color: #ef5a31; }
+.btn-zalo { background-color: #0088FF; }
+
+.product-policy-text {
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.product-policy-text p {
+    margin-bottom: 10px;
+}
+
+/* ================= PRODUCT TABS SECTION ================= */
+.product-tabs-section {
+    border: 1px solid #eeeeee; /* Thống nhất viền màu nhạt */
+    border-radius: 4px;
+    margin-bottom: 60px;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #fcfcfc; /* Trùng nền dải breadcrumb */
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.tab-btn.active {
+    background-color: #fff;
+    color: #333;
+    border-top: 3px solid #315c85;
+    margin-top: -1px;
+}
+
+.tab-content {
+    padding: 30px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.tab-content h3 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.tab-content p {
+    margin-bottom: 20px;
+}
+
+.tab-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+/* ================= RELATED PRODUCTS SECTION ================= */
+.related-products-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 50px;
+}
+
+.related-section-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Tạo vạch kẻ ngang mờ mờ dưới tiêu đề chuẩn Figma */
+.related-section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 1px;
+    background-color: #999;
+    margin: 15px auto 0;
+}

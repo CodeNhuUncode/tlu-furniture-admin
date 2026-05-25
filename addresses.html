@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin địa chỉ - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+
+    <style>
+        body {
+            background-color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 15px 80px;
+            display: flex;
+            gap: 50px;
+        }
+
+        /* SIDEBAR MENU BÊN TRÁI */
+        .profile-sidebar {
+            width: 240px;
+            flex-shrink: 0;
+        }
+        .profile-sidebar-title {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 24px 0;
+            color: #111;
+            letter-spacing: 0.5px;
+        }
+        .profile-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .profile-menu-item a {
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+        .profile-menu-item a:hover {
+            color: #000;
+        }
+        .profile-menu-item.active a {
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* KHỐI NỘI DUNG SỔ ĐỊA CHỈ BÊN PHẢI (CHUẨN THEO ẢNH image_648ba5.png) */
+        .profile-content-main {
+            flex: 1;
+        }
+        .profile-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .profile-content-title {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            color: #111;
+            letter-spacing: 0.5px;
+        }
+        .add-address-trigger-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s;
+        }
+        .add-address-trigger-btn:hover {
+            background-color: #000;
+        }
+
+        /* DANH SÁCH THẺ ĐỊA CHỈ HIỆN TẠI */
+        .address-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .address-card-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        .address-card-item:last-child {
+            border-bottom: none;
+        }
+        .address-user-info p {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .address-user-info p strong {
+            color: #111;
+            font-weight: 600;
+        }
+        .default-badge-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #2e7d32;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+        .address-actions-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 12px;
+        }
+        .addr-action-link {
+            font-size: 13px;
+            color: #555;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .addr-action-link:hover {
+            color: #000;
+        }
+        .addr-action-link.delete-link {
+            color: #d32f2f;
+        }
+        .addr-action-link.delete-link:hover {
+            color: #b71c1c;
+        }
+
+        /* KHỐI FORM NHẬP LIỆU PHẲNG XÁM (ẨN MẶC ĐỊNH) */
+        #wrapper-form-address {
+            max-width: 480px;
+            margin-top: 15px;
+        }
+        .form-section-tag {
+            background: #333;
+            color: #fff;
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+        .profile-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .profile-input {
+            width: 100%;
+            background-color: #f1f1f1;
+            border: none;
+            padding: 12px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 4px;
+        }
+        .profile-input:focus {
+            background-color: #e8e8e8;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #444;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+        .checkbox-label input[type="checkbox"] {
+            margin: 0;
+            width: 15px;
+            height: 15px;
+            accent-color: #333;
+        }
+        .form-buttons-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 13.5px;
+        }
+        .submit-btn-black {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+        .submit-btn-black:hover {
+            background-color: #000;
+        }
+        .cancel-span-btn {
+            color: #555;
+            cursor: pointer;
+        }
+        .cancel-span-btn span {
+            text-decoration: underline;
+        }
+        .cancel-span-btn:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+    
+    <main class="profile-page-container">
+        
+        <aside class="profile-sidebar">
+            <h2 class="profile-sidebar-title">Tài khoản</h2>
+            <ul class="profile-menu">
+                <li class="profile-menu-item">
+                    <a href="/profile.html">Thông tin tài khoản</a>
+                </li>
+                <li class="profile-menu-item active">
+                    <a href="/addresses.html">Danh sách địa chỉ</a>
+                </li>
+                <li class="profile-menu-item">
+                    <a href="/index.html" style="color: #eb715b;">Đăng xuất</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="profile-content-main">
+            
+            <div class="profile-header-row">
+                <h1 class="profile-content-title">Thông tin địa chỉ</h1>
+                <button type="button" class="add-address-trigger-btn" id="btn-open-form">
+                    Nhập địa chỉ mới
+                </button>
+            </div>
+
+            <div id="address-list-view" class="address-cards-stack">
+                
+                <div class="address-card-item">
+                    <div class="address-user-info">
+                        <p><strong>Nguyễn Văn A</strong></p>
+                        <p><strong>Số điện thoại:</strong> 0912345678</p>
+                        <p><strong>Địa chỉ:</strong> 123 Nguyễn Trãi, Phường Thanh Xuân Trung, Quận Thanh Xuân, Hà Nội</p>
+                    </div>
+                    <div class="default-badge-text">
+                        <i class="fas fa-check-circle"></i> Địa chỉ mặc định
+                    </div>
+                    <div class="address-actions-group">
+                        <span class="addr-action-link" onclick="alert('Chức năng sửa đang được xử lý!');">Chỉnh sửa địa chỉ</span>
+                        <span class="addr-action-link delete-link" onclick="confirm('Bạn có chắc chắn muốn xóa địa chỉ này?');">Xóa</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="wrapper-form-address" style="display: none;">
+                <div class="form-section-tag">Nhập địa chỉ mới</div>
+                
+                <form class="profile-form" onsubmit="event.preventDefault(); alert('Thêm địa chỉ mới TLU thành công!'); location.reload();">
+                    
+                    <input type="text" class="profile-input" placeholder="Họ" required>
+                    
+                    <input type="text" class="profile-input" placeholder="Tên" required>
+                    
+                    <input type="text" class="profile-input" placeholder="Công ty">
+                    
+                    <input type="text" class="profile-input" placeholder="Địa chỉ 1" required>
+                    
+                    <input type="text" class="profile-input" placeholder="Địa chỉ 2">
+                    
+                    <div style="position: relative;">
+                        <select class="profile-input" style="appearance: none; cursor: pointer; padding-right: 40px;" required>
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <option value="HN">Hà Nội</option>
+                            <option value="HCM">TP. Hồ Chí Minh</option>
+                            <option value="DN">Đà Nẵng</option>
+                            <option value="HP">Hải Phòng</option>
+                        </select>
+                        <i class="fas fa-chevron-down" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #666; pointer-events: none;"></i>
+                    </div>
+
+                    <input type="tel" class="profile-input" placeholder="Số điện thoại" required>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" style="width: 15px; height: 15px; accent-color: #333;"> 
+                        <span>Đặt làm địa chỉ mặc định.</span>
+                    </label>
+
+                    <div class="form-buttons-row">
+                        <button type="submit" class="submit-btn-black">Thêm mới</button>
+                        <span id="btn-close-form" class="cancel-span-btn">
+                            hoặc <span>Hủy</span>
+                        </span>
+                    </div>
+
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <load src="/src/includes/policies.html" />
+    <load src="/src/includes/footer.html" />
+
+    <script>
+        const btnOpen = document.getElementById('btn-open-form');
+        const btnClose = document.getElementById('btn-close-form');
+        const listView = document.getElementById('address-list-view');
+        const formBox = document.getElementById('wrapper-form-address');
+
+        if (btnOpen && btnClose) {
+            // Khi bấm "Nhập địa chỉ mới" -> Ẩn danh sách cũ, hiện Form phẳng xám lên
+            btnOpen.addEventListener('click', () => {
+                formBox.style.display = 'block';
+                listView.style.display = 'none';
+                btnOpen.style.display = 'none';
+            });
+
+            // Khi bấm "Hủy" -> Ẩn form, hiện lại danh sách ban đầu mượt mà
+            btnClose.addEventListener('click', () => {
+                formBox.style.display = 'none';
+                listView.style.display = 'block';
+                btnOpen.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống cửa hàng - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/products.css">
+    
+    <style>
+        /* ================= KHỐI BANNER CHỮ ĐỀ NỀN ẢNH ĐỒNG BỘ TRANG ƯU ĐÃI ================= */
+        .offers-banner {
+            width: 100%;
+            height: 380px;
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=1280&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+        .offers-banner-content h2 {
+            font-size: 46px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+        .offers-banner-content p {
+            font-size: 16px;
+            font-weight: 500;
+            background: #eb715b; /* Màu cam thương hiệu TLU */
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        /* ================= LAYOUT KHỐI NỘI DUNG CỬA HÀNG ================= */
+        .store-main-layout {
+            display: flex;
+            gap: 30px;
+            padding: 50px 15px;
+        }
+        .store-sidebar {
+            width: 35%;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        .filter-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            outline: none;
+        }
+        .store-list-container {
+            margin-top: 25px;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .store-item-box {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .store-item-box:last-child {
+            border-bottom: none;
+        }
+        .store-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .store-name i {
+            color: #111;
+            font-size: 16px;
+        }
+        .store-detail-text {
+            font-size: 13.5px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 6px;
+            padding-left: 26px;
+        }
+        .store-link-map {
+            display: inline-block;
+            font-size: 13px;
+            color: #315c85;
+            font-weight: 600;
+            text-decoration: underline;
+            margin-top: 4px;
+            padding-left: 26px;
+        }
+        .store-map-area {
+            flex: 1;
+            border: 1px solid #e5e5e5;
+            height: 650px;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<load src="/src/includes/header.html" />
+
+    <div class="breadcrumb-wrapper">
+        <div class="container breadcrumb">
+            <a href="/index.html">Trang chủ</a>
+            <span class="separator">/</span>
+            <span class="current">Cửa hàng</span>
+        </div>
+    </div>
+<body>
+
+    <section class="offers-banner">
+        <div class="offers-banner-content">
+            <h2>HỆ THỐNG CỬA HÀNG</h2>
+            <p>Hotline hỗ trợ 24/7: 0969696969</p>
+        </div>
+    </section>
+
+    <div class="breadcrumb-wrapper" style="background: #fff; padding: 15px 0; border-bottom: 1px solid #eee;">
+        <div class="container breadcrumb" style="font-size: 13px; color: #666; padding: 0 15px;">
+            <a href="/index.html" style="color: #666; text-decoration: none;">Trang chủ</a>
+            <span class="separator" style="margin: 0 8px;">/</span>
+            <span class="current" style="color: #111; font-weight: 500;">Hệ thống cửa hàng</span>
+        </div>
+    </div>
+
+    <main class="container store-main-layout">
+        
+        <div class="store-sidebar">
+            <h2 class="sidebar-title">Tìm cửa hàng</h2>
+            
+            <div class="filter-group">
+                <label>Chọn tỉnh thành</label>
+                <select id="province-select">
+                    <option>- Chọn Tỉnh thành -</option>
+                    <option value="hcm" selected>Thành phố Hồ Chí Minh</option>
+                    <option value="hn">Hà Nội</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Chọn cửa hàng</label>
+                <select id="branch-select">
+                    <option>- Chọn cửa hàng -</option>
+                    <option value="benthanh" selected>Showroom TLU Bến Thành</option>
+                    <option value="tanthoihiep">Showroom TLU Tân Thới Hiệp</option>
+                </select>
+            </div>
+
+            <div class="store-list-container">
+                
+                <div class="store-item-box">
+                    <h3 class="store-name"><i class="fas fa-map-marker-alt"></i> Showroom TLU Bến Thành</h3>
+                    <p class="store-detail-text">194 Nguyễn Công Trứ (Lầu 1 - Tòa nhà SAVIMEX)</p>
+                    <p class="store-detail-text">Thời gian hoạt động: <strong>8h00 - 21h00</strong></p>
+                    <p class="store-detail-text">Điện thoại: <strong>0969696969</strong></p>
+                    <a href="https://maps.google.com" target="_blank" class="store-link-map">Xem bản đồ</a>
+                </div>
+
+                <div class="store-item-box">
+                    <h3 class="store-name"><i class="fas fa-map-marker-alt"></i> Showroom TLU Tân Thới Hiệp</h3>
+                    <p class="store-detail-text">162 HT17, P. Tân Thới Hiệp (Q.12 cũ) TP. HCM (Nằm trong khuôn viên công ty SAVIMEX phía sau bến xe buýt Hiệp Thành)</p>
+                    <p class="store-detail-text">Thời gian hoạt động: <strong>8h00 - 21h00</strong></p>
+                    <p class="store-detail-text">Điện thoại: <strong>0969696969</strong></p>
+                    <a href="https://maps.google.com" target="_blank" class="store-link-map">Xem bản đồ</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="store-map-area" style="overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=900&q=80" 
+                 alt="Showroom TLU Furniture" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+    </main>
+
+    <load src="/src/includes/policies.html" />
+
+    <load src="/src/includes/footer.html" />
+
+    <script type="module" src="/src/js/detail.js"></script>
+</body>
+</html>

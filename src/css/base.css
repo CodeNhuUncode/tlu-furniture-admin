@@ -1,0 +1,38 @@
+/* CSS Reset & Biến toàn cục */
+:root {
+    --primary-color: #f26522;
+    --text-main: #333;
+    --text-muted: #888;
+    --bg-light: #f9f9f9;
+    --brown-bg: #8a6c52;
+    --border-color: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: var(--text-main);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* KHUNG DÀN TRANG CHUẨN */
+.container {
+    width: 100%; /* Bắt buộc phải có để khung giãn đều 2 bên */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

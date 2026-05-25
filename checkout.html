@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán đơn hàng - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .checkout-main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 15px 80px;
+            display: flex;
+            gap: 30px;
+        }
+
+        /* ĐỊNH DẠNG FORM KHỐI BO TRÒN TRẮNG CHUẨN MẪU */
+        .checkout-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #eef0f2;
+        }
+        .checkout-left-column {
+            flex: 1.3;
+        }
+        .checkout-right-column {
+            flex: 1;
+        }
+
+        /* KHỐI CHỨA THÔNG TIN USER */
+        .user-profile-summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .avatar-info-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .user-avatar-circle {
+            width: 44px;
+            height: 44px;
+            background: #000;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .user-meta-text h4 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+        }
+        .user-meta-text p {
+            margin: 0;
+            font-size: 12px;
+            color: #777;
+        }
+        .logout-btn-link {
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+        }
+        .logout-btn-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ĐỊNH DẠNG TIÊU ĐỀ KHỐI CHỨC NĂNG */
+        .card-header-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 16px 0;
+            text-transform: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* CẤU TRÚC FORM INPUT TRÊN NỀN TRẮNG */
+        .form-inputs-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .input-with-icon-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .checkout-field-input {
+            width: 100%;
+            border: 1px solid #d9d9d9;
+            padding: 14px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 6px;
+            background-color: #fff;
+            transition: border-color 0.2s;
+        }
+        .checkout-field-input:focus {
+            border-color: #111;
+        }
+        .vn-flag-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 14px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg') no-repeat center;
+            background-size: cover;
+            border: 1px solid #eee;
+        }
+
+        /* PHƯƠNG THỨC GIAO HÀNG VÀ THANH TOÁN */
+        .disabled-info-placeholder {
+            background-color: #f0f0f0;
+            color: #888;
+            padding: 14px 16px;
+            font-size: 13.5px;
+            border-radius: 6px;
+        }
+        .payment-methods-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid #eeb0f2;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .payment-method-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            cursor: pointer;
+        }
+        .payment-method-row:last-child {
+            border-bottom: none;
+        }
+        .payment-method-row input[type="radio"] {
+            margin: 0;
+            width: 18px;
+            height: 18px;
+            accent-color: #111;
+            cursor: pointer;
+        }
+        .payment-method-row img {
+            height: 22px;
+            object-fit: contain;
+        }
+        .payment-method-label {
+            font-size: 13px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* DANH SÁCH GIỎ HÀNG THU NHỎ BÊN PHẢI */
+        .cart-mini-products {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .cart-mini-item {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+        .mini-img-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            border: 1px solid #eeb0f2;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .mini-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .mini-details-box {
+            flex: 1;
+        }
+        .mini-p-name {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 4px 0;
+            padding-right: 25px;
+            line-height: 1.4;
+        }
+        .mini-p-meta {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 6px;
+            background: #f5f5f5;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .mini-prices-line {
+            font-size: 13px;
+        }
+        .mini-old-price {
+            text-decoration: line-through;
+            color: #bbb;
+            margin-right: 8px;
+        }
+        .mini-current-price {
+            color: #eb715b;
+            font-weight: 700;
+        }
+        .pink-saved-text {
+            font-size: 11px;
+            color: #e91e63;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        .mini-delete-icon {
+            position: absolute;
+            right: 0;
+            top: 2px;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .mini-delete-icon:hover { color: #f44336; }
+
+        /* KHỐI NHẬP MÃ KHUYẾN MÃI */
+        .coupon-box-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .select-coupon-dropdown {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+        .badge-discount-pink {
+            background-color: #e3f2fd;
+            color: #1e88e5;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .apply-coupon-btn {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 0 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* KHỐI TÍNH TIỀN TỔNG CỘNG CUỐI */
+        .calculation-rows-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .calc-row-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13.5px;
+            color: #555;
+        }
+        .final-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .final-total-row span {
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+        }
+        .final-total-row strong {
+            font-size: 16px;
+            font-weight: 700;
+            color: #111;
+        }
+        .place-order-submit-btn {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+        }
+        .place-order-submit-btn:hover {
+            background-color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+
+    <div class="checkout-main-content">
+        
+        <div class="checkout-left-column">
+            
+            <div class="checkout-card">
+                <div class="card-header-title">
+                    <span>Tài khoản</span>
+                    <a href="/index.html" class="logout-btn-link">Đăng xuất</a>
+                </div>
+                <div class="user-profile-summary">
+                    <div class="avatar-info-box">
+                        <div class="user-avatar-circle">DT</div>
+                        <div class="user-meta-text">
+                            <h4>Đông Phương Bất Bại</h4>
+                            <p>dpbb@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-card">
+                <h3 class="card-header-title">Thông tin giao hàng</h3>
+                <form id="main-checkout-processing-form" onsubmit="event.preventDefault(); alert('Đặt hàng thành công!'); window.location.href='/index.html';">
+                    <div class="form-inputs-stack">
+                        <input type="text" class="checkout-field-input" placeholder="Nhập họ và tên" required>
+                        
+                        <div class="input-with-icon-wrapper">
+                            <input type="tel" class="checkout-input checkout-field-input" placeholder="Nhập số điện thoại" required style="padding-right: 50px;">
+                            <div class="vn-flag-icon"></div>
+                        </div>
+
+                        <input type="text" class="checkout-field-input" value="Vietnam" readonly style="background-color: #fdfdfd; color: #555;">
+                        <input type="text" class="checkout-field-input" placeholder="Địa chỉ, tên đường" required>
+                        <input type="text" class="checkout-field-input" placeholder="Tỉnh/TP, Quận/Huyện, Phường/Xã" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="checkout-card">
+                <h3 class="card-header-title">Phương thức giao hàng</h3>
+                <div class="disabled-info-placeholder">
+                    Nhập địa chỉ để xem các phương thức giao hàng
+                </div>
+            </div>
+
+            <div class="checkout-card">
+                <h3 class="card-header-title">Phương thức thanh toán</h3>
+                <div class="payment-methods-list">
+    
+    <label class="payment-method-row">
+        <input type="radio" name="payment_option" checked>
+        <div class="payment-icon-container" style="background-color: #e3f2fd;">
+            <i class="fas fa-university" style="color: #0d47a1; font-size: 18px;"></i>
+        </div>
+        <span class="payment-method-label">Thanh toán chuyển khoản qua ngân hàng</span>
+    </label>
+
+    <label class="payment-method-row">
+        <input type="radio" name="payment_option">
+        <div class="payment-icon-container" style="background-color: #efebe9;">
+            <i class="fas fa-credit-card" style="color: #4e342e; font-size: 18px;"></i>
+        </div>
+        <span class="payment-method-label">Thanh toán quẹt thẻ khi giao hàng (POS)</span>
+    </label>
+
+    <label class="payment-method-row">
+        <input type="radio" name="payment_option">
+        <div class="payment-icon-container" style="background-color: #e8f5e9;">
+            <i class="fas fa-qrcode" style="color: #2e7d32; font-size: 18px;"></i>
+        </div>
+        <span class="payment-method-label">Thanh toán online qua cổng VNPay (ATM/Visa/MasterCard/JCB/QR Pay trên Internet Banking)</span>
+    </label>
+
+    <label class="payment-method-row">
+        <input type="radio" name="payment_option">
+        <div class="payment-icon-container" style="background-color: #fce4ec;">
+            <i class="fas fa-wallet" style="color: #d81b60; font-size: 18px;"></i>
+        </div>
+        <span class="payment-method-label">Thanh toán online qua ví MoMo</span>
+    </label>
+
+    <label class="payment-method-row">
+        <input type="radio" name="payment_option">
+        <div class="payment-icon-container" style="background-color: #e8f5e9;">
+            <i class="fas fa-bolt" style="color: #4caf50; font-size: 18px;"></i>
+        </div>
+        <span class="payment-method-label">Chuyển khoản qua QR - VCB</span>
+    </label>
+
+</div>
+            </div>
+
+            <div class="checkout-card">
+                <h3 class="card-header-title">Ghi chú đơn hàng</h3>
+                <input type="text" class="checkout-field-input" placeholder="Ghi chú đơn hàng" style="border: 1px solid #ddd; border-radius: 6px;">
+            </div>
+
+        </div>
+
+        <div class="checkout-right-column">
+            
+            <div class="checkout-card">
+                <h3 class="card-header-title">Giỏ hàng</h3>
+                <div class="cart-mini-products">
+                    
+                    <div class="cart-mini-item">
+                        <div class="mini-img-box">
+                            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=100" alt="Armchair">
+                        </div>
+                        <div class="mini-details-box">
+                            <h4 class="mini-p-name">Ghế Armchair Thư Giãn Kèm Đôn TLU OLLY</h4>
+                            <div class="mini-p-meta">Olive / Set Ghế bành kèm đôn</div>
+                            <div class="mini-prices-line">
+                                <span class="mini-old-price">18,480,000đ</span>
+                                <span class="mini-current-price">10,990,000đ</span>
+                            </div>
+                            <div class="pink-saved-text">Bạn đã được giảm 7,490,000đ</div>
+                        </div>
+                        <i class="far fa-trash-alt mini-delete-icon"></i>
+                    </div>
+
+                    <div class="cart-mini-item">
+                        <div class="mini-img-box">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=100" alt="Sofa Mochi">
+                        </div>
+                        <div class="mini-details-box">
+                            <h4 class="mini-p-name">Ghế Sofa 1m8 TLU MOCHI</h4>
+                            <div class="mini-p-meta">Be</div>
+                            <div class="mini-prices-line">
+                                <span class="mini-old-price">13,990,000đ</span>
+                                <span class="mini-current-price">9,990,000đ</span>
+                            </div>
+                            <div class="pink-saved-text">Bạn đã được giảm 4,000,000đ</div>
+                        </div>
+                        <i class="far fa-trash-alt mini-delete-icon"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="checkout-card">
+                <h3 class="card-header-title">Mã khuyến mãi</h3>
+                <div class="select-coupon-dropdown">
+                    <span style="display:flex; align-items:center; gap:8px;"><i class="p_icon far fa-bookmark"></i> Chọn mã</span>
+                    <span class="badge-discount-pink"><i class="fas fa-percentage"></i> Giảm giá 15% <i class="fas fa-chevron-down" style="font-size:10px;"></i></span>
+                </div>
+                <div class="coupon-box-wrapper">
+                    <input type="text" class="checkout-field-input" placeholder="Nhập mã khuyến mãi" style="padding: 12px 14px;">
+                    <button type="button" class="apply-coupon-btn">Áp dụng</button>
+                </div>
+            </div>
+
+            <div class="checkout-card">
+                <h3 class="card-header-title">Tóm tắt đơn hàng</h3>
+                <div class="calculation-rows-stack">
+                    <div class="calc-row-item">
+                        <span>Tổng tiền hàng</span>
+                        <span>20,980,000đ</span>
+                    </div>
+                    <div class="calc-row-item">
+                        <span>Phí vận chuyển</span>
+                        <span>-</span>
+                    </div>
+                </div>
+                
+                <div class="final-total-row">
+                    <span>Tổng thanh toán</span>
+                    <strong>20,980,000đ</strong>
+                </div>
+
+                <button type="submit" form="main-checkout-processing-form" class="place-order-submit-btn">Đặt hàng</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <load src="/src/includes/footer.html" />
+
+    <script type="module" src="/src/js/detail.js"></script>
+</body>
+</html>

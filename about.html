@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Về Nội Thất TLU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+
+    <style>
+        /* ================= BANNER ĐẦU TRANG ĐỒNG BỘ WEBSITE ================= */
+        .about-hero-banner {
+            width: 100%;
+            height: 380px;
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1280&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+        .about-banner-content h2 {
+            font-size: 46px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+        .about-banner-content p {
+            font-size: 16px;
+            font-weight: 500;
+            background: #eb715b; /* Màu cam thương hiệu TLU */
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        /* ================= CẤU TRÚC LAYOUT NỘI DUNG CHÍNH ================= */
+        .about-main-content {
+            padding: 50px 15px;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .intro-section {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .intro-image-box {
+            position: relative;
+            width: 40%;
+            text-align: center;
+        }
+        .intro-image-box img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 0 0 100px 100px;
+            background-color: #f5f5f5;
+        }
+        .designer-name-tag {
+            background: #000;
+            color: #fff;
+            padding: 12px;
+            margin-top: -5px;
+            border-radius: 4px;
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+            box-sizing: border-box;
+        }
+        .designer-name-tag h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .designer-name-tag span {
+            font-size: 12px;
+            color: #ccc;
+        }
+        .intro-text-box {
+            flex: 1;
+        }
+        .intro-text-box h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #111;
+        }
+        .intro-text-box p {
+            font-size: 14.5px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .features-list li {
+            font-size: 14.5px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .features-list strong {
+            color: #111;
+        }
+
+        /* KHỐI TẦM NHÌN & SỨ MỆNH */
+        .vision-mission-grid {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .vision-box, .mission-box {
+            flex: 1;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            padding: 30px;
+            border-radius: 6px;
+        }
+        .vision-box h3, .mission-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #eb715b;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+        .vision-box p, .mission-box p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .vision-box img, .mission-box img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+
+    <div class="breadcrumb-wrapper">
+        <div class="container breadcrumb">
+            <a href="/index.html">Trang chủ</a>
+            <span class="separator">/</span>
+            <span class="current">Giới thiệu về nội thất TLU</span>
+        </div>
+    </div>
+
+    <section class="about-hero-banner">
+        <div class="about-banner-content">
+            <h2>GIỚI THIỆU VỀ NỘI THẤT TLU</h2>
+            <p>Kiến tạo không gian sống tối giản và bền vững</p>
+        </div>
+    </section>
+
+    <main class="container about-main-content">
+        
+        <div class="intro-section">
+            <div class="intro-image-box">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Mr. Juanny Barcelo Borges">
+                <div class="designer-name-tag">
+                    <h4>Mr. Juanny Barceló Borges</h4>
+                    <span>Design Director</span>
+                </div>
+            </div>
+
+            <div class="intro-text-box">
+                <p>Trong nhịp sống đô thị hiện đại, bạn chắc hẳn mong muốn một không gian sống vừa đẹp mắt, tiện nghi, vừa an toàn cho sức khỏe và có thể đồng hành bền vững cùng gia đình. Nhưng để tìm được nội thất vừa đạt chuẩn quốc tế lại có mức giá hợp lý, không phải lúc nào cũng dễ dàng.</p>
+                <p><strong>TLU</strong> ra đời để giải quyết chính điều đó – mang đến cho bạn những giải pháp nội thất đột phá:</p>
+                
+                <ul class="features-list">
+                    <li>• <strong>An toàn & bền vững:</strong> Sử dụng vật liệu thân thiện với môi trường, an toàn cho sức khỏe cả gia đình bạn.</li>
+                    <li>• <strong>Giá trị thực tế:</strong> Giá thành hợp lý nhờ lợi thế sản xuất trực tiếp từ SAVIMEX – doanh nghiệp hơn 40 năm xuất khẩu nội thất toàn cầu.</li>
+                    <li>• <strong>Bền và chất lượng:</strong> Sản xuất trên dây chuyền tiên tiến, kiểm định nghiêm ngặt theo tiêu chuẩn quốc tế khắt khe.</li>
+                    <li>• <strong>Đẹp và hiện đại:</strong> Thiết kế tối giản, tinh tế, phù hợp nhịp sống đô thị.</li>
+                </ul>
+                
+                <p style="margin-top: 15px;">Với <strong>TLU</strong>, bạn không chỉ mua một món đồ nội thất. Bạn đang chọn một phong cách sống: sống tối giản, sống có trách nhiệm, sống vì sức khỏe và sự an tâm lâu dài.</p>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <div class="vision-mission-grid">
+            <div class="vision-box">
+                <h3>Tầm Nhìn</h3>
+                <p><strong>TLU</strong> mong muốn trở thành thương hiệu nội thất Việt tiên phong trong việc mang đến giải pháp sống tối giản – an toàn – bền vững, để mỗi ngôi nhà không chỉ là nơi ở, mà còn là nơi thể hiện sự chọn lọc và trách nhiệm trong lối sống của bạn.</p>
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Tầm nhìn TLU">
+            </div>
+
+            <div class="mission-box">
+                <h3>Sứ Mệnh</h3>
+                <p><strong>TLU</strong> cam kết kiến tạo nội thất đẹp, chất lượng, an toàn và bền vững. Chúng tôi không ngừng đổi mới, lắng nghe và đồng hành cùng khách hàng, để mỗi sản phẩm bạn lựa chọn đều mang đến giá trị sống tích cực và lâu dài.</p>
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=400" alt="Sứ mệnh TLU">
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 50px 0;">
+
+        <section class="core-values-section" style="padding-bottom: 20px;">
+            
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div style="background: #2b2b2b; color: #fff; display: inline-block; padding: 15px 60px; font-size: 20px; font-weight: 700; letter-spacing: 2px; border-radius: 4px; text-transform: uppercase;">
+                    Giá Trị Cốt Lõi
+                </div>
+            </div>
+
+            <div class="value-block" style="margin-bottom: 50px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase;">
+                    1. An Toàn Cho Sức Khỏe
+                </h3>
+                <p style="font-size: 14.5px; color: #555; margin-bottom: 25px; text-align: justify;">
+                    Nội Thất <strong>TLU</strong> sử dụng gỗ đạt chứng nhận <strong>CARB-P2</strong>, kết hợp cùng sơn gốc nước với hàm lượng VOCs thấp – giúp kiểm soát lượng formaldehyde phát thải ở mức an toàn, mang đến không gian sống trong lành, hạn chế nguy cơ ảnh hưởng tiêu cực đến hô hấp và sức khỏe.
+                </p>
+
+                <div class="scb-chart-box" style="border: 1px solid #e5e5e5; padding: 30px; border-radius: 6px; background: #fafafa; max-width: 800px; margin: 0 auto 40px;">
+                    <h4 style="text-align: center; font-size: 15px; font-weight: 700; color: #2e7d32; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.4;">
+                        TLU là thương hiệu nội thất tiên phong<br>sử dụng vật liệu Eco-Friendly và an toàn cho sức khỏe
+                    </h4>
+                    
+                    <div style="position: relative; height: 12px; background: linear-gradient(to right, #4caf50 0%, #8bc34a 20%, #ff9800 50%, #f44336 100%); border-radius: 6px; margin: 40px 0 15px;">
+                        <div style="position: absolute; left: 0%; top: -30px; border-left: 2px solid #4caf50; height: 45px; padding-left: 8px; font-size: 12px; line-height: 1.3;">
+                            <strong>Gỗ Tự Nhiên</strong><br><span style="color:#666;">0.01ppm</span>
+                        </div>
+                        <div style="position: absolute; left: 25%; top: -30px; border-left: 2px solid #2e7d32; height: 45px; padding-left: 8px; font-size: 12px; line-height: 1.3; background: #fafafa;">
+                            <strong style="color: #2e7d32;">CARB P2*</strong><br>Vật Liệu <strong style="color: #eb715b;">TLU</strong> Sử Dụng<br><span style="color:#2e7d32; font-weight:700;">0.05ppm</span>
+                        </div>
+                        <div style="position: absolute; left: 60%; top: -30px; border-left: 2px solid #ff9800; height: 45px; padding-left: 8px; font-size: 12px; line-height: 1.3;">
+                            <strong>Vật Liệu Gỗ Đa Số Thị Trường</strong><br><span style="color:#666;">2ppm</span>
+                        </div>
+                        <div style="position: absolute; right: 0; top: -30px; font-size: 12px; text-align: right;">
+                            <br><span style="color:#666;">3ppm</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 11.5px; color: #777; text-align: center; margin-top: 35px; font-style: italic;">
+                        *ppm: Nồng độ Formaldehyde (chất bảo quản) sử dụng trong vật liệu gỗ sản xuất. Đạt chuẩn CARB-P2 giúp ngăn ngừa tối đa các vấn đề về sức khỏe.
+                    </p>
+                </div>
+            </div>
+
+            <div class="value-block" style="margin-bottom: 50px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase;">
+                    2. Thân Thiện Với Môi Trường
+                </h3>
+                <div style="display: flex; gap: 40px; align-items: center;">
+                    <p style="flex: 1; font-size: 14.5px; color: #555; text-align: justify; margin: 0;">
+                        <strong>TLU</strong> sử dụng nguồn gỗ đạt chứng nhận <strong>FSC</strong> từ những rừng trồng có kiểm soát, kết hợp bao bì giấy tái chế để giảm thiểu tối đa rác thải ra môi trường tự nhiên. Chúng tôi kiên trì theo đuổi mục tiêu sản xuất bền vững, giúp mỗi sản phẩm đều hướng đến giá trị lâu dài và trách nhiệm cao cả với hành tinh xanh.
+                    </p>
+                    <div style="width: 45%; position: relative; height: 180px; background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=500'); background-size: cover; background-position: center; border-radius: 8px; color: #fff; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; box-sizing: border-box;">
+                        <div style="font-size: 18px; font-weight: 700; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">100% Nguyên Liệu Gỗ Bền Vững</div>
+                        <div style="font-size: 12px; color: #e0e0e0; margin-top: 4px;">Đạt chứng nhận bảo vệ rừng toàn cầu FSC từ TLU</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-block" style="margin-bottom: 50px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase;">
+                    3. Bảo Hành 5 Năm – An Tâm Sử Dụng
+                </h3>
+                <div style="display: flex; gap: 40px; align-items: center;">
+                    <div style="width: 45%; position: relative; height: 180px; background-image: url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=500'); background-size: cover; background-position: center; border-radius: 8px; color: #333; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border: 1px solid #e5e5e5; background-color: #fcfcfc;">
+                        <div style="text-align: center; background: rgba(255,255,255,0.92); padding: 20px 30px; border-radius: 4px; border: 1px solid #ddd;">
+                            <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; display: block; margin-bottom: 2px;">Chính sách hậu mãi</span>
+                            <strong style="font-size: 18px; color: #111; display: block; text-transform: uppercase;">Bảo Hành 5 Năm Dài Nhất</strong>
+                            <span style="font-size: 13px; color: #eb715b; font-weight: 600; display: block; margin-top: 4px;">Đồng hành cùng tổ ấm TLU</span>
+                        </div>
+                    </div>
+                    <p style="flex: 1; font-size: 14.5px; color: #555; text-align: justify; margin: 0;">
+                        Chúng tôi thấu hiểu rằng niềm tin của khách hàng được xây dựng và vun đắp từ trải nghiệm sử dụng lâu dài. Vì vậy, <strong>TLU Furniture</strong> tự hào là thương hiệu tiên phong mang đến chính sách bảo hành dài hạn lên đến <strong>5 năm</strong>, khẳng định lời cam kết tuyệt đối về mặt chất lượng, độ bền bỉ và sẵn sàng đồng hành cùng ngôi nhà của bạn qua mọi thử thách của thời gian.
+                    </p>
+                </div>
+            </div>
+
+            <div class="value-block" style="margin-bottom: 50px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase;">
+                    4. Chất Lượng Quốc Tế
+                </h3>
+                <div style="display: flex; gap: 40px; align-items: center;">
+                    <p style="flex: 1; font-size: 14.5px; color: #555; text-align: justify; margin: 0; line-height: 1.6;">
+                        Sản phẩm của Nội Thất <strong>TLU</strong> được sản xuất theo tiêu chuẩn xuất khẩu tại thị trường khó tính như Châu Âu – Châu Mỹ, kiểm định nghiêm ngặt từ nguyên liệu, thành phẩm, quy trình sản xuất đến con người – đáp ứng yêu cầu của các thị trường khó tính như châu Âu, Hàn Quốc và Nhật Bản.
+                    </p>
+                    <div style="width: 45%;">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" 
+                             alt="Sản phẩm TLU bọc vải tối giản đạt chuẩn quốc tế" 
+                             style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e5e5;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="value-block" style="margin-bottom: 60px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase;">
+                    5. Thiết Kế Tối Giản – Tối Đa Công Năng
+                </h3>
+                <div style="display: flex; gap: 40px; align-items: center;">
+                    <div style="width: 45%;">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=500&q=80" 
+                             alt="Không gian nội thất tối giản TLU" 
+                             style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e5e5;">
+                    </div>
+                    <p style="flex: 1; font-size: 14.5px; color: #555; text-align: justify; margin: 0; line-height: 1.6;">
+                        <strong>TLU</strong> kết hợp hài hòa giữa thẩm mỹ và công năng, tạo nên nội thất không chỉ đẹp mà còn phục vụ trọn vẹn cho nhu cầu cuộc sống thực – tiện nghi, linh hoạt và truyền cảm hứng mỗi ngày.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-footer-quote" style="border-left: 4px solid #eb715b; padding-left: 20px; margin-top: 50px; font-style: italic; color: #555; font-size: 14px; line-height: 1.7; text-align: justify;">
+                <p style="margin-bottom: 10px;">
+                    Với <strong>TLU</strong>, "bền vững" không chỉ là xu hướng, mà là trách nhiệm dài lâu. Triết lý này được thể hiện trong từng khâu: từ nguyên vật liệu, quy trình sản xuất đến dịch vụ hậu mãi.
+                </p>
+                <p style="margin: 0;">
+                    Chúng tôi mong muốn truyền cảm hứng về lối sống có chọn lọc, tiêu dùng có trách nhiệm và cùng khách hàng kiến tạo tương lai xanh, cân bằng, lành mạnh cho thế hệ sau.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <load src="/src/includes/policies.html" />
+    <load src="/src/includes/footer.html" />
+
+    <script type="module" src="/src/js/detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản của bạn - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+
+    <style>
+        body {
+            background-color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .profile-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 15px 80px;
+            display: flex;
+            gap: 50px;
+        }
+
+        /* SIDEBAR MENU BÊN TRÁI */
+        .profile-sidebar {
+            width: 240px;
+            flex-shrink: 0;
+        }
+        .profile-sidebar-title {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 24px 0;
+            color: #111;
+            letter-spacing: 0.5px;
+        }
+        .profile-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .profile-menu-item a {
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+        .profile-menu-item a:hover {
+            color: #000;
+        }
+        .profile-menu-item.active a {
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* KHỐI NỘI DUNG CHÍNH BÊN PHẢI (CHUẨN THEO ẢNH image_642e29.png) */
+        .profile-content-main {
+            flex: 1;
+        }
+        .profile-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+        .profile-content-title {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            color: #111;
+            letter-spacing: 0.5px;
+        }
+        .edit-profile-trigger-btn {
+            background: none;
+            border: none;
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0;
+        }
+        .edit-profile-trigger-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* PHOM DÁNG FORM NHẬP LIỆU PHẲNG XÁM */
+        .profile-form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            max-width: 480px;
+        }
+        .profile-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .profile-form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        .profile-input {
+            width: 100%;
+            background-color: #f1f1f1;
+            border: none;
+            padding: 12px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .profile-input:focus {
+            background-color: #e8e8e8;
+        }
+        
+        /* KHỐI CHỌN GIỚI TÍNH */
+        .gender-radio-group {
+            display: flex;
+            gap: 24px;
+            margin-top: 4px;
+        }
+        .gender-radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            color: #333;
+            cursor: pointer;
+        }
+        .gender-radio-label input[type="radio"] {
+            margin: 0;
+            width: 16px;
+            height: 16px;
+            accent-color: #333;
+        }
+
+        /* NÚT CẬP NHẬT GIAO DIỆN */
+        .submit-profile-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            width: fit-content;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s;
+        }
+        .submit-profile-btn:hover {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+    
+    <main class="profile-page-container">
+        
+        <aside class="profile-sidebar">
+            <h2 class="profile-sidebar-title">Tài khoản</h2>
+            <ul class="profile-menu">
+                <li class="profile-menu-item active">
+                    <a href="/profile.html">Thông tin tài khoản</a>
+                </li>
+                <li class="profile-menu-item">
+                    <a href="/addresses.html">Danh sách địa chỉ</a>
+                </li>
+                <li class="profile-menu-item">
+                    <a href="/index.html" style="color: #eb715b;">Đăng xuất</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="profile-content-main">
+            
+            <div class="profile-header-row">
+                <h1 class="profile-content-title">Thông tin tài khoản</h1>
+                <button type="button" class="edit-profile-trigger-btn" onclick="alert('Kích hoạt chế độ chỉnh sửa thông tin!');">
+                    Sửa
+                </button>
+            </div>
+
+            <form class="profile-form" onsubmit="event.preventDefault(); alert('Cập nhật thông tin tài khoản TLU thành công!');">
+                
+                <div class="profile-form-group">
+                    <label>Email</label>
+                    <input type="email" class="profile-input" value="BomNhau@gmail.com" required>
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Họ và tên đệm</label>
+                    <input type="text" class="profile-input" value="Bợm">
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Tên</label>
+                    <input type="text" class="profile-input" value="Nhậu" required>
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Giới tính</label>
+                    <div class="gender-radio-group">
+                        <label class="gender-radio-label">
+                            <input type="radio" name="user_gender" value="female"> Nữ
+                        </label>
+                        <label class="gender-radio-label">
+                            <input type="radio" name="user_gender" value="male" checked> Nam
+                        </label>
+                    </div>
+                </div>
+
+                <div class="profile-form-group">
+                    <label>Ngày sinh</label>
+                    <input type="text" class="profile-input" placeholder="mm/dd/yyyy" value="13/1/2300">
+                </div>
+
+                <button type="submit" class="submit-profile-btn">Cập nhật</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <load src="/src/includes/policies.html" />
+    <load src="/src/includes/footer.html" />
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+
+    <style>
+        .register-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 15px 120px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        /* CỘT TRÁI: TIÊU ĐỀ & MXH */
+        .register-left-col {
+            width: 50%;
+            padding-right: 60px;
+            box-sizing: border-box;
+        }
+        .register-left-col h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .register-sub-text {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .title-underline {
+            width: 60px;
+            height: 3px;
+            background: #000;
+            margin-bottom: 40px;
+        }
+        .social-login-group {
+            display: flex;
+            gap: 12px;
+        }
+        .social-btn {
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .btn-google {
+            background-color: #df4a32; /* Màu đỏ Google */
+        }
+        .btn-facebook {
+            background-color: #3b5998; /* Màu xanh Facebook */
+        }
+
+        /* CỘT PHẢI: FORM ĐĂNG KÝ HỆ THỐNG */
+        .register-right-col {
+            width: 50%;
+            padding-left: 60px;
+            border-left: 1px solid #eee;
+            box-sizing: border-box;
+        }
+        .form-row-2col {
+            display: flex;
+            gap: 15px;
+        }
+        .register-form-group {
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        .register-form-group input {
+            width: 100%;
+            background-color: #f0f0f0; /* Màu nền xám nhẹ nhã nhặn của các ô input */
+            border: none;
+            padding: 16px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 2px;
+        }
+        .register-form-group input::placeholder {
+            color: #999;
+        }
+        
+        /* Khối checkbox điều khoản */
+        .terms-checkbox-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+        .terms-checkbox-row input {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+        .terms-checkbox-row a {
+            color: #111;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        /* Hàng nút bấm gửi form */
+        .form-action-row {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .submit-register-btn {
+            background-color: #3a3a3a; /* Nút đen xám sang trọng */
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+        .submit-register-btn:hover {
+            background-color: #111;
+        }
+        .form-links-helper {
+            font-size: 13px;
+            color: #666;
+        }
+        .form-links-helper a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .form-links-helper a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+
+    <div class="breadcrumb-wrapper" style="background: #fff; padding: 15px 0; border-bottom: 1px solid #eee;">
+        <div class="container breadcrumb" style="font-size: 12px; color: #888; padding: 0 15px;">
+            <a href="/index.html" style="color: #888; text-decoration: none;">Trang chủ</a>
+            <span class="separator" style="margin: 0 6px;">/</span>
+            <span class="current" style="color: #333;">Tạo tài khoản</span>
+        </div>
+    </div>
+
+    <main class="register-page-container">
+        
+        <div class="register-left-col">
+            <h1>Đăng ký</h1>
+            <p class="register-sub-text">Đăng ký để tích lũy điểm và nhận ưu đãi từ TLU.</p>
+            <div class="title-underline"></div>
+            
+            <div class="social-login-group">
+                <a href="#" class="social-btn btn-google">Đăng ký bằng Google</a>
+                <a href="#" class="social-btn btn-facebook">Đăng ký bằng Facebook</a>
+            </div>
+        </div>
+
+        <div class="register-right-col">
+            <form id="tlu-register-form" onsubmit="event.preventDefault();">
+                
+                <div class="form-row-2col">
+                    <div class="register-form-group">
+                        <input type="text" placeholder="Họ" required>
+                    </div>
+                    <div class="register-form-group">
+                        <input type="text" placeholder="Tên" required>
+                    </div>
+                </div>
+                
+                <div class="register-form-group">
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+
+                <div class="register-form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                
+                <div class="register-form-group">
+                    <input type="password" placeholder="Mật khẩu" required>
+                </div>
+
+                <label class="terms-checkbox-row">
+                    <input type="checkbox" required>
+                    <span>Tôi đồng ý với các <a href="#">điều khoản dịch vụ</a> & <a href="#">chính sách bảo mật</a> của TLU Furniture</span>
+                </label>
+
+                <div class="form-action-row">
+                    <button type="submit" class="submit-register-btn">Đăng Ký</button>
+                    <div class="form-links-helper">
+                        hoặc <a href="/login.html">Đăng nhập</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+    <load src="/src/includes/footer.html" />
+
+    <script type="module" src="/src/js/detail.js"></script>
+</body>
+</html>

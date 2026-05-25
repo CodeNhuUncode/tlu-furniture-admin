@@ -1,0 +1,206 @@
+
+/* ================= BLOG PAGE LAYOUT ================= */
+.blog-page-layout {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* ================= SIDEBAR ================= */
+.blog-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.sidebar-widget {
+    margin-bottom: 40px;
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #333; 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center; /* Lệnh căn giữa nội dung tiêu đề widget */
+}
+
+/* Recent Posts */
+.recent-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 5px; /* Thêm khoảng thở nhỏ hai bên lề */
+}
+
+.recent-post-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.recent-post-item img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.recent-post-info h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.recent-post-info a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.recent-post-info a:hover {
+    color: #f26522;
+}
+
+.recent-post-info span {
+    font-size: 11px;
+    color: #999;
+}
+
+/* Categories */
+.blog-categories {
+    padding: 0 5px;
+}
+
+.blog-categories li {
+    border-bottom: 1px solid #eee;
+}
+
+.blog-categories a {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.blog-categories a:hover {
+    color: #f26522;
+    padding-left: 5px; /* Tạo hiệu ứng đẩy nhẹ sang phải khi di chuột cực kỳ chuyên nghiệp */
+}
+
+.blog-categories a span {
+    color: #aaa;
+    font-weight: bold;
+}
+
+/* ================= MAIN CONTENT (BLOG LIST) ================= */
+.blog-content {
+    flex: 1;
+}
+
+.page-main-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.blog-item {
+    display: flex;
+    gap: 30px;
+}
+
+.blog-item img {
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.blog-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.blog-item-info h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.blog-item-info h2 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.blog-item-info h2 a:hover {
+    color: #f26522;
+}
+
+.blog-item-info .category {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 12px;
+}
+
+.blog-item-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ================= PHÂN TRANG (PAGINATION) ================= */
+.pagination {
+    display: flex;
+    justify-content: center; /* Lệnh quan trọng nhất để căn giữa toàn bộ cụm */
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa các con số */
+    width: 100%; /* Đảm bảo khối này chiếm hết chiều ngang để tự động căn giữa */
+    margin-top: 50px; /* Khoảng cách với phần danh sách bên trên */
+    margin-bottom: 30px;
+}
+
+.page-num, .page-next {
+    font-size: 16px;
+    color: #999;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    transition: color 0.2s;
+}
+
+/* Số trang hiện tại đang được chọn (in đậm, màu đen) */
+.page-num.active {
+    color: #333;
+    font-weight: 700;
+}
+
+/* Hiệu ứng khi di chuột qua các số khác */
+.page-num:hover, .page-next:hover {
+    color: #f26522; /* Đổi màu cam khi hover */
+}
+
+/* Dấu 3 chấm */
+.page-dots {
+    color: #999;
+    font-size: 16px;
+    letter-spacing: 2px;
+}

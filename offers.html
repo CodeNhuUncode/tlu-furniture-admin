@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình Ưu Đãi - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+    <link rel="stylesheet" href="/src/css/products.css">
+
+    <style>
+        .offers-banner {
+            width: 100%;
+            height: 380px;
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=1280&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .offers-banner-content h2 {
+            font-size: 46px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .offers-banner-content p {
+            font-size: 16px;
+            font-weight: 500;
+            background: #eb715b;
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+
+    <div class="breadcrumb-wrapper">
+        <div class="container breadcrumb">
+            <a href="/index.html">Trang chủ</a>
+            <span class="separator">/</span>
+            <span class="current">Chương trình Ưu đãi lớn TLU</span>
+        </div>
+    </div>
+
+    <section class="offers-banner">
+        <div class="offers-banner-content">
+            <h2>SEASON SALE</h2>
+            <p>Ưu đãi lên đến 50% - Toàn bộ các dòng sản phẩm</p>
+        </div>
+    </section>
+
+    <main class="container" style="padding: 20px 15px 5px;">
+        <div class="page-header">
+            <h1 class="page-title">Sản phẩm khuyến mãi</h1>
+            <div class="sort-box">
+                <select><option>Mức giảm giá: Cao xuống thấp</option></select>
+            </div>
+        </div>
+
+        <div class="filter-bar">
+            <div class="filter-label"><i class="fas fa-filter"></i> BỘ LỌC</div>
+            <div class="filter-options">
+                <select><option>DANH MỤC</option></select>
+                <select><option>GIÁ SẢN PHẨM</option></select>
+                <select><option>MÀU SẮC</option></select>
+            </div>
+        </div>
+
+        <div class="product-grid" style="margin-bottom: 40px;">
+            
+            <div class="product-card" data-id="nem-signature" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Nệm" class="js-grid-img"><div class="discount-tag">-24%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Nệm Lò Xo TLU Sleep Signature</h3>
+                    <div class="product-pricing"><span class="new-price">7,990,000đ</span><span class="old-price">10,490,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="dalumd-301" style="cursor: pointer;">
+                <div class="product-image-wrapper">
+                    <img src="" alt="Giường" class="js-grid-img"><div class="discount-tag">-18%</div>
+                    <div class="price-overlay"><div class="price-left">Chỉ còn<br><strong>8.066.500đ</strong></div><div>Mã: <strong>MOHO26BR15.TS</strong></div></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Giường Ngủ Gỗ Tràm TLU DALUMD 301 Ver 2</h3>
+                    <div class="product-pricing"><span class="new-price">9,490,000đ</span><span class="old-price">10,990,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="kitchen-standard" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Tủ bếp" class="js-grid-img"><div class="discount-tag">NEW</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">HỆ TỦ BẾP TLU KITCHEN DÒNG STANDARD</h3>
+                    <div class="product-pricing"><span class="new-price">Giá từ 35.000.000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="koster-combo" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Combo" class="js-grid-img"><div class="discount-tag">-21%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Full Combo Phòng Ngủ TLU KOSTER Màu Nâu</h3>
+                    <div class="product-pricing"><span class="new-price">14,990,000đ</span><span class="old-price">18,970,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="moya-combo" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Moya" class="js-grid-img"><div class="discount-tag">-35%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Combo Phòng Ngủ TLU MOYA (Có Hộc & Ổ Điện)</h3>
+                    <div class="product-pricing"><span class="new-price">15,490,000đ</span><span class="old-price">23,980,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="sofa-riga" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Riga" class="js-grid-img"><div class="discount-tag">-37%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Ghế Sofa Da TLU RIGA 2m</h3>
+                    <div class="product-pricing"><span class="new-price">11,490,000đ</span><span class="old-price">18,290,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="giuong-comet" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Comet" class="js-grid-img"><div class="discount-tag">-19%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Giường Ngủ Bọc Vải Phong Cách Ý TLU COMET</h3>
+                    <div class="product-pricing"><span class="new-price">14,490,000đ</span><span class="old-price">16,990,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="giuong-bond" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Bond" class="js-grid-img"><div class="discount-tag">-14%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Giường Ngủ Bọc Vải Cao Cấp TLU BOND</h3>
+                    <div class="product-pricing"><span class="new-price">14,990,000đ</span><span class="old-price">17,490,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="sofa-mochi" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Mochi" class="js-grid-img"><div class="discount-tag">-29%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Ghế Sofa 1m8 TLU MOCHI</h3>
+                    <div class="product-pricing"><span class="new-price">9,990,000đ</span><span class="old-price">13,990,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="armchair-olly" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Olly" class="js-grid-img"><div class="discount-tag">-41%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Ghế Armchair Thư Giãn Kèm Đôn TLU OLLY</h3>
+                    <div class="product-pricing"><span class="new-price">10,990,000đ</span><span class="old-price">18,480,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="giuong-blink" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Blink" class="js-grid-img"><div class="discount-tag">-9%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Giường Ngủ Bọc Da Cao Cấp TLU BLINK</h3>
+                    <div class="product-pricing"><span class="new-price">15,990,000đ</span><span class="old-price">17,490,000đ</span></div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="tu-ao-astro" style="cursor: pointer;">
+                <div class="product-image-wrapper"><img src="" alt="Astro" class="js-grid-img"><div class="discount-tag">-15%</div></div>
+                <div class="product-info">
+                    <h3 class="product-title">Combo Tủ Quần Áo Cánh Kính TLU ASTRO</h3>
+                    <div class="product-pricing"><span class="new-price">23,490,000đ</span><span class="old-price">27,480,000đ</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="page-num active">1</a>
+            <a href="#" class="page-next"><i class="fas fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <load src="/src/includes/policies.html" />
+    <load src="/src/includes/footer.html" />
+
+    <script type="module" src="/src/js/detail.js"></script>
+</body>
+</html>

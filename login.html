@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập tài khoản - TLU Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+
+    <style>
+        .login-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 15px 120px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        /* CỘT TRÁI: TIÊU ĐỀ & MXH */
+        .login-left-col {
+            width: 50%;
+            padding-right: 60px;
+            box-sizing: border-box;
+        }
+        .login-left-col h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .login-sub-text {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .title-underline {
+            width: 60px;
+            height: 3px;
+            background: #000;
+            margin-bottom: 40px;
+        }
+        .social-login-group {
+            display: flex;
+            gap: 12px;
+        }
+        .social-btn {
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .btn-google {
+            background-color: #df4a32; /* Màu cam đỏ Google chuẩn ảnh */
+        }
+        .btn-facebook {
+            background-color: #3b5998; /* Màu xanh nước biển đậm Facebook */
+        }
+
+        /* CỘT PHẢI: FORM ĐĂNG NHẬP CƠ BẢN */
+        .login-right-col {
+            width: 50%;
+            padding-left: 60px;
+            border-left: 1px solid #eee;
+            box-sizing: border-box;
+        }
+        .login-form-group {
+            margin-bottom: 20px;
+        }
+        .login-form-group input {
+            width: 100%;
+            background-color: #f0f0f0; /* Màu nền input xám nhẹ nhã nhặn */
+            border: none;
+            padding: 16px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            color: #333;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 2px;
+        }
+        .login-form-group input::placeholder {
+            color: #999;
+        }
+        
+        /* Khối điều khoản captcha nhỏ */
+        .captcha-policy-notice {
+            font-size: 11px;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .captcha-policy-notice a {
+            color: #3b5998;
+            text-decoration: none;
+        }
+        .captcha-policy-notice a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hàng nút bấm gửi form */
+        .form-action-row {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .submit-login-btn {
+            background-color: #3a3a3a; /* Màu nút đen xám chuẩn phom mẫu */
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.2s;
+        }
+        .submit-login-btn:hover {
+            background-color: #111;
+        }
+        .form-links-helper {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .form-links-helper a {
+            color: #666;
+            text-decoration: none;
+        }
+        .form-links-helper a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <load src="/src/includes/header.html" />
+
+    <div class="breadcrumb-wrapper" style="background: #fff; padding: 15px 0; border-bottom: 1px solid #eee;">
+        <div class="container breadcrumb" style="font-size: 12px; color: #888; padding: 0 15px;">
+            <a href="/index.html" style="color: #888; text-decoration: none;">Trang chủ</a>
+            <span class="separator" style="margin: 0 6px;">/</span>
+            <span class="current" style="color: #333;">Đăng nhập tài khoản</span>
+        </div>
+    </div>
+
+    <main class="login-page-container">
+        
+        <div class="login-left-col">
+            <h1>Đăng nhập</h1>
+            <p class="login-sub-text">Đăng nhập để tích lũy điểm và nhận ưu đãi từ TLU.</p>
+            <div class="title-underline"></div>
+            
+            <div class="social-login-group">
+                <a href="#" class="social-btn btn-google">Đăng nhập bằng Google</a>
+                <a href="#" class="social-btn btn-facebook">Đăng nhập bằng Facebook</a>
+            </div>
+        </div>
+
+        <div class="login-right-col">
+            <form id="tlu-login-form" onsubmit="event.preventDefault();">
+                
+                <div class="login-form-group">
+                    <input type="text" placeholder="Nhập email hoặc số điện thoại" required>
+                </div>
+                
+                <div class="login-form-group">
+                    <input type="password" placeholder="Mật khẩu" required>
+                </div>
+
+                <div class="captcha-policy-notice">
+                    Website được bảo vệ bởi reCAPTCHA và <a href="#">Chính sách bảo mật</a> vả <a href="#">Điều khoản dịch vụ</a> của Google.
+                </div>
+
+                <div class="form-action-row">
+    <a href="/profile.html" class="submit-login-btn" style="text-decoration: none; text-align: center; display: inline-block;">
+        Đăng Nhập
+    </a>
+    
+    <div class="form-links-helper">
+        <a href="#">Quên mật khẩu?</a><br>
+        hoặc <a href="/register.html" style="font-weight: 600;">Đăng ký</a>
+    </div>
+</div>
+
+            </form>
+        </div>
+
+    </main>
+
+    <load src="/src/includes/footer.html" />
+
+    <script type="module" src="/src/js/detail.js"></script>
+</body>
+</html>
